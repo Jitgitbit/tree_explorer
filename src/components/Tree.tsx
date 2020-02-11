@@ -6,9 +6,13 @@ type Props = {
   scientificName: string;
   commonName: string;
   numLikes: number;
-  onLike: () => void;
+  onLike: (treeName: string) => void;
 };
 class Tree extends React.Component<Props> {
+  handleLike = () => {
+    console.log(`test click`)
+    this.props.onLike(this.props.name);
+  }
   render() {
     return (
     <div>
@@ -16,8 +20,8 @@ class Tree extends React.Component<Props> {
       Scientific Name: {this.props.scientificName}, 
       Common Name: {this.props.commonName}, 
       Likes: {this.props.numLikes}</p>
-
-      <button onClick={this.props.onLike}>Like</button>
+    <span aria-label="thumbs up" role="img" onClick={this.handleLike}>👍 {this.props.numLikes}</span> 
+      {/* <button onClick={() => this.props.handleLike}>Like</button> */}
     </div>
     )
   }

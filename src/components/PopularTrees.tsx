@@ -28,31 +28,48 @@ class PopularTrees extends React.Component<Props, State> {
     numLikes: 0
   };
   
-  handleLike = () => {
-    console.log("hi");
-  };
+  // handleLike = () => {
+  //   console.log("hi, handle like log");
+  // };
 
-  onLike = () => {
-    console.log(`hi`);
+  handleLike = (treeName: string) => {
+    console.log(`hi, on like log`, treeName);
+    const updatedTrees = this.state.trees.map(tree => {
+      return tree.name === treeName 
+      ? {...tree, numLikes: tree.numLikes + 1}
+      : tree;
+    })
+    this.setState({trees: updatedTrees});
   }
 
   addTree =()=> {
-    console.log(`adding tree log`)
+    console.log(`adding tree log`, this.state);
+    this.setState({trees: [
+      ...this.state.trees, 
+      {
+        name: this.state.commonName,
+        commonName: this.state.commonName, 
+        scientificName: this.state.scientificName,
+        numLikes: 0
+      }
+    ]});
   }
 
   render() {
+    console.log(this.state);
     return (
     <div> 
       <div>
         {this.state.trees.map((tree, index) => (
-          <Tree
-            key={index}
-            name={tree.name}
-            scientificName={tree.scientificName}
-            commonName={tree.commonName}
-            numLikes={tree.numLikes}
-            onLike={this.onLike}
-          />
+          // <Tree
+          //   key={index}
+          //   name={tree.name}
+          //   scientificName={tree.scientificName}    //same
+          //   commonName={tree.commonName}
+          //   numLikes={tree.numLikes}
+          //   onLike={this.handleLike}
+          // />
+          <Tree key={index} {...tree} onLike={this.handleLike}/>          //same
         ))}
       </div>
       <div>
