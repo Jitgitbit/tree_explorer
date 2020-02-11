@@ -19,8 +19,9 @@ class PopularTrees extends React.Component<Props, State> {
   state: State = {
     trees: [
       { name: "White birch", scientificName: "Betula pendula", commonName: `something`, numLikes:3 },
-      { name: "Weeping willow", scientificName: "Salix sepulcralis", commonName: `something`, numLikes:76576565744 },
-      { name: "London planetree", scientificName: "Platanus hybryda", commonName: `something`, numLikes:2.3 }
+      { name: "Weeping willow", scientificName: "Salix sepulcralis", commonName: `something`, numLikes:7 },
+      { name: "London planetree", scientificName: "Platanus hybryda", commonName: `something`, numLikes:2.3 },
+      { name:`B Tree`, scientificName: `Sanseveria`, commonName: `programming tree structure`, numLikes:6576565744 }
     ],
     commonName: '',
     scientificName: '',

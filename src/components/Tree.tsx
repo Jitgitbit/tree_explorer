@@ -6,7 +6,7 @@ type Props = {
   scientificName: string;
   commonName: string;
   numLikes: number;
-  onLike: VoidFunction;
+  onLike: () => void;
 };
 class Tree extends React.Component<Props> {
   render() {
