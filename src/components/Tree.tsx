@@ -1,4 +1,5 @@
 // src/components/Tree.tsx
+// See here how onLike and handleLike are being juggled!
 import React from "react";
 
 type Props = {

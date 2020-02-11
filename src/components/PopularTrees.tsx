@@ -1,4 +1,5 @@
 // src/components/PopularTrees.tsx
+//See here how onLike and handleLike are being juggled!
 import React from "react";
 import Tree from './Tree';
 
