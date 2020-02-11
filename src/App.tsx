@@ -8,6 +8,7 @@ const App = () => {
       <Tree name={`White birch`} scientificName={`Betula pendula`}/>
       <Tree name={`Weeping willow`} scientificName={`Salix sepulcralis`}/>
       <Tree name={`London planetree`} scientificName={`Platanus hybryda`}/>
+      
     </div>
   );
 }
